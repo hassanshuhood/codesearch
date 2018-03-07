@@ -1,0 +1,57 @@
+ <resource>
+            <name>faIBCSBotsSetups</name>
+            <type-name-ref>RestServiceResourceType</type-name-ref>
+          </resource>
+		  
+		                <member-resource>
+                <resource-name>faIBCSBotsSetups</resource-name>
+                <type-name-ref>RestServiceResourceType</type-name-ref>
+                <actions>create,describe,get,invoke,update</actions>
+              </member-resource>
+			  
+			  expenseAttachments
+			  
+			  
+			  
+			  
+			                <member-resource>
+                <resource-name>faIBCSSetup</resource-name>
+                <type-name-ref>RestServiceResourceType</type-name-ref>
+                <actions>create,describe,get,invoke,update</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>faIBCSBotSetups</resource-name>
+                <type-name-ref>RestServiceResourceType</type-name-ref>
+                <actions>create,describe,get,invoke,update</actions>
+              </member-resource>
+			  
+			  
+			  
+			  
+			  
+			  
+			            <resource>
+            <name>faIBCSSetup</name>
+            <type-name-ref>RestServiceResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>faIBCSBotSetups</name>
+            <type-name-ref>RestServiceResourceType</type-name-ref>
+          </resource>
+		  
+		  
+		  ------------------------------------------
+		  
+		  
+		  <web-resource-collection>
+      <web-resource-name>jersey</web-resource-name>
+      <url-pattern>/jersey</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>valid-users</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+   JSONObject json = new JSONObject();
+   Subject subject = Subject.getSubject(AccessController.getContext());
+   String userName = SubjectUtil.getUserName(subject);
